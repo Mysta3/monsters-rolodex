@@ -8,7 +8,8 @@ export class App extends Component {
     super();
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: '',
+      title: ''
     };
   }
 
@@ -18,7 +19,7 @@ export class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
   handleChange = e => {
-    this.setState({ searchField: e.target.value });
+    this.setState({ searchField: e.target.value, title: e.target.value });
   };
   render() {
     const { searchField, monsters } = this.state;
